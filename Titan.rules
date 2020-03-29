@@ -1,0 +1,113 @@
+
+(rules PCB Titan
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 19801)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.8)
+      (against_preferred_direction_trace_costs 3.7)
+    )
+    (layer_rule In1.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.5)
+    )
+    (layer_rule In2.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.9)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.8)
+      (against_preferred_direction_trace_costs 2.3)
+    )
+  )
+  (rule
+    (width 250.0)
+    (clear 200.2)
+    (clear 125.0 (type smd_to_turn_gap))
+    (clear 50.0 (type smd_smd))
+  )
+  (padstack "Via[0-3]_800:400_um"
+    (shape
+      (circle F.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle In1.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle In2.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 800.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-3]_800:400_um" "Via[0-3]_800:400_um" default
+  )
+  (via 
+    "Via[0-3]_800:400_um-kicad_default" "Via[0-3]_800:400_um" "kicad_default"
+  )
+  (via_rule
+    default "Via[0-3]_800:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-3]_800:400_um-kicad_default"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu In1.Cu In2.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    "VDD_MCU" GND "Net-(C1-Pad1)" "Net-(C2-Pad1)" "Net-(C12-Pad1)" "Net-(C13-Pad1)" "Net-(C14-Pad1)" /nRESET
+    "Net-(C16-Pad1)" "VDDA_MCU" "Net-(C21-Pad1)" "Net-(C22-Pad1)" "Net-(C23-Pad1)" "Net-(C24-Pad1)" "Net-(C25-Pad1)" "Net-(C26-Pad1)"
+    "Net-(C27-Pad2)" "Net-(C28-Pad2)" "Net-(C29-Pad1)" "Net-(C30-Pad1)" "Net-(C31-Pad1)" "Net-(C33-Pad1)" "/IO_1" "/IO_2"
+    "/IO_3" "/IO_4" "/IO_5" "/IO_6" "/IO_7" "/IO_8" "/IO_9" "/IO_10"
+    "/IO_11" "/IO_12" "/IO_13" "/IO_14" "/IO_15" "/IO_16" "Net-(D2-Pad1)" "Net-(D3-Pad1)"
+    "Net-(D3-Pad2)" "Net-(D4-Pad2)" "Net-(D4-Pad1)" "Net-(D5-Pad2)" "Net-(D5-Pad1)" "Net-(D6-Pad2)" "Net-(D6-Pad1)" "Net-(D10-Pad2)"
+    "Net-(D11-Pad2)" "Net-(D12-Pad2)" "Net-(D13-Pad2)" "Net-(D14-Pad2)" "Net-(D15-Pad2)" "Net-(D16-Pad2)" "Net-(FB2-Pad1)" "Net-(FB3-Pad1)"
+    "Net-(J1-Pad6)" "Net-(J2-Pad6)" "Net-(J3-Pad3)" "Net-(J3-Pad4)" /SWDIO /SWCLK "Net-(J6-Pad4)" "Net-(J6-Pad3)"
+    "SPI_AUX_MISO" "SPI_AUX_NSS" "SPI_AUX_MOSI" "SPI_AUX_SCK" "/PWM_8" "/PWM_7" "/PWM_6" "/PWM_5"
+    "SPI_SLAVE_SCK" "SPI_SLAVE_MOSI" "SPI_SLAVE_NSS" "SPI_SLAVE_MISO" "/IO_CON_1" "/IO_CON_11" "/IO_CON_2" "/IO_CON_12"
+    "/IO_CON_3" "/IO_CON_13" "/IO_CON_4" "/IO_CON_14" "/IO_CON_5" "/IO_CON_15" "/IO_CON_6" "/IO_CON_16"
+    "/IO_CON_7" "/IO_CON_8" "/IO_CON_9" "/IO_CON_10" "ADC_1" "ADC_3" "ADC_2" "/PWM_1"
+    "/PWM_2" "/PWM_3" "/PWM_4" "/RC_1_PWR_CTRL" "/RC_2_PWR_CTRL" BOOT1 "Net-(R4-Pad1)" BOOT0
+    "Net-(R5-Pad1)" "/IMU2_INT" "Net-(R7-Pad1)" "/UART_MOTOR_1_RX" "/LED_HEARTBEAT" "/LED_SETPOINT" "/LED_CTRL_MODE" "/LED_STATUS"
+    "/LED_ERROR" "/LED_FATAL" "/ADC_BAT" "/UART_MOTOR_1_TX" "/UART_MOTOR_2_RX" "Net-(R18-Pad1)" "/UART_MOTOR_2_TX" "Net-(R20-Pad1)"
+    "Net-(R21-Pad1)" "Net-(R22-Pad1)" "Net-(R23-Pad1)" "/UART_COM_USB_RX" "/UART_DBG_RX" "/UART_COM_USB_TX" "/UART_DBG_TX" "/UART_COM_USB_RTS"
+    "Net-(R29-Pad2)" "/UART_COM_USB_CTS" "Net-(R31-Pad2)" "/I2C_SDA_IMU" "/I2C_SCL_IMU" "/IMU1_INT" "Net-(R37-Pad1)" "/UART_RC_1_RX"
+    "/UART_RC_1_TX" "Net-(R40-Pad1)" "/UART_RC_2_RX" "Net-(R42-Pad1)" "/UART_RC_2_TX" "Net-(R63-Pad1)" "/SPI_MEM_NSS" "/SPI_MEM_SCK"
+    "/SPI_MEM_MISO" "/SPI_MEM_MOSI" "/UART_COM_RX" "/UART_COM_RTS" "/UART_COM_TX" "/UART_COM_CTS" "Net-(J8-Pad1)" "Net-(J8-Pad3)"
+    "Net-(J9-Pad3)" "Net-(J9-Pad1)" "Net-(D1-Pad2)" /REV1 /REV2 /REV3 /REV4 "Net-(J13-Pad1)"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu In1.Cu In2.Cu B.Cu)
+    )
+  )
+)

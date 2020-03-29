@@ -1,0 +1,6 @@
+(fp_lib_table
+  (lib (name digikey-footprints)(type KiCad)(uri /home/mlundh/Kicad/lib/digikey-kicad-library/digikey-footprints.pretty)(options "")(descr ""))
+  (lib (name Footprint)(type KiCad)(uri /home/mlundh/Kicad/lib/SnapEDA/Footprint)(options "")(descr ""))
+  (lib (name Titan)(type KiCad)(uri /home/mlundh/Kicad/lib/mlundh_Footprints/mlundh.pretty)(options "")(descr ""))
+  (lib (name footprints)(type KiCad)(uri "/home/mlundh/Kicad/lib/Ultra Librarian/footprints.pretty")(options "")(descr ""))
+)
