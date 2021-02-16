@@ -155,4 +155,5 @@
   (lib (name CY15B104Q-SXI)(type Legacy)(uri /home/mlundh/Kicad/lib/SnapEDA/symbols/CY15B104Q-SXI.lib)(options "")(descr ""))
   (lib (name 1231AS-H-6R4M_P3)(type Legacy)(uri /home/mlundh/Kicad/lib/SnapEDA/symbols/1231AS-H-6R4M_P3.lib)(options "")(descr ""))
   (lib (name 2020-03-08_10-59-35)(type Legacy)(uri "/home/mlundh/Kicad/lib/Ultra Librarian/lib/2020-03-08_10-59-35.lib")(options "")(descr ""))
+  (lib (name Titan-rescue)(type Legacy)(uri ${KIPRJMOD}/Titan-rescue.lib)(options "")(descr ""))
 )
