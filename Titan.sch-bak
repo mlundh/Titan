@@ -4,7 +4,7 @@ EELAYER END
 $Descr A2 23386 16535
 encoding utf-8
 Sheet 1 1
-Title "Titan Schematic"
+Title "Titan V2 Schematic"
 Date "2020-02-13"
 Rev ""
 Comp ""
@@ -465,7 +465,7 @@ U 1 1 5E31E550
 P 16150 5650
 F 0 "U4" H 16150 5775 50  0000 C CNN
 F 1 "CY15B104Q" H 16150 5684 50  0000 C CNN
-F 2 "Footprint:SOIC127P523X800X203-8N" H 16150 5650 50  0001 C CNN
+F 2 "Package_SO:SOP-8_3.9x4.9mm_P1.27mm" H 16150 5650 50  0001 C CNN
 F 3 "" H 16150 5650 50  0001 C CNN
 	1    16150 5650
 	1    0    0    -1  
@@ -3176,26 +3176,8 @@ Text Label 14550 13350 0    50   ~ 0
 PWM_1
 Text Label 14550 13450 0    50   ~ 0
 PWM_2
-$Comp
-L TitanCustom:ST730M33R U2
-U 1 1 643D46A2
-P 4800 2300
-F 0 "U2" H 4750 2525 50  0000 C CNN
-F 1 "ST730M33R" H 4750 2434 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-23-5_HandSoldering" H 4800 2300 50  0001 C CNN
-F 3 "" H 4800 2300 50  0001 C CNN
-	1    4800 2300
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5800 2400 5800 2500
-Wire Wire Line
-	4450 2350 4400 2350
-Wire Wire Line
-	4450 2500 4400 2500
-Wire Wire Line
-	4400 2500 4400 2350
-Connection ~ 4400 2350
 Wire Wire Line
 	4800 2750 4800 3450
 $Comp
@@ -3229,8 +3211,6 @@ Wire Wire Line
 Wire Wire Line
 	4200 2500 4200 2350
 Connection ~ 4200 2350
-Wire Wire Line
-	4200 2350 4400 2350
 Wire Wire Line
 	4200 2800 4200 3450
 Connection ~ 4200 3450
@@ -3306,4 +3286,19 @@ Wire Wire Line
 Text Label 1950 8400 0    50   ~ 0
 VBUS_COM
 Connection ~ 1700 8400
+$Comp
+L TitanCustom:ST732M33R U2
+U 1 1 604346A5
+P 4800 2300
+F 0 "U2" H 4800 2515 50  0000 C CNN
+F 1 "ST732M33R" H 4800 2424 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5_HandSoldering" H 4800 2300 50  0001 C CNN
+F 3 "" H 4800 2300 50  0001 C CNN
+	1    4800 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 2350 4450 2350
+Wire Wire Line
+	5150 2500 5150 2350
 $EndSCHEMATC
