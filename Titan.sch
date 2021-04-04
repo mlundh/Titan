@@ -13,18 +13,7 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L MCU_ST_STM32F4:STM32F413VGTx U3
-U 1 1 5E1B91C6
-P 11850 7750
-F 0 "U3" H 11850 4900 50  0000 C CNN
-F 1 "STM32F413VGTx" H 11850 4800 50  0000 C CNN
-F 2 "Package_QFP:LQFP-100_14x14mm_P0.5mm" H 11150 5250 50  0001 R CNN
-F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/DM00282249.pdf" H 11850 7750 50  0001 C CNN
-	1    11850 7750
-	1    0    0    -1  
-$EndComp
-Text Notes 4350 1600 0    50   ~ 0
+Text Notes 4150 2150 0    50   ~ 0
 Power Supply\n3.3V
 $Comp
 L Device:LED D10
@@ -302,27 +291,9 @@ Wire Wire Line
 	11950 10500 11850 10500
 Connection ~ 11850 10500
 Wire Wire Line
-	11650 5050 11750 5050
-Connection ~ 11750 5050
-Wire Wire Line
-	11750 5050 11850 5050
-Connection ~ 11850 5050
-Wire Wire Line
-	11850 5050 11950 5050
-Connection ~ 11950 5050
-Wire Wire Line
-	11950 5050 12050 5050
-Connection ~ 12050 5050
-Wire Wire Line
-	12050 5050 12150 5050
-Wire Wire Line
 	12150 4850 12150 5050
-Connection ~ 12150 5050
 Text GLabel 12150 4850 1    50   Input ~ 0
 VDD_MCU
-Connection ~ 11650 5050
-Wire Wire Line
-	11550 5050 11650 5050
 Text GLabel 12600 4800 1    50   Input ~ 0
 VDDA_MCU
 Wire Wire Line
@@ -382,8 +353,6 @@ F 3 "" H 10400 6300 50  0001 C CNN
 	1    10400 6300
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	10950 5950 10850 5950
 Wire Wire Line
 	12050 10500 12150 10500
 Wire Wire Line
@@ -1511,8 +1480,6 @@ Wire Wire Line
 	10950 9150 10300 9150
 Wire Wire Line
 	10950 9250 10300 9250
-Text Label 10300 9150 0    50   ~ 0
-UART_RC_2_TX
 Text Label 10300 9250 0    50   ~ 0
 UART_RC_2_RX
 Wire Wire Line
@@ -1951,8 +1918,6 @@ F 3 "" H 4150 14950 50  0001 C CNN
 	1    4150 14950
 	1    0    0    -1  
 $EndComp
-Text GLabel 12750 7250 2    50   Input ~ 0
-BOOT1
 Wire Wire Line
 	12600 5050 12250 5050
 $Comp
@@ -1991,20 +1956,6 @@ F 3 "~" H 10500 5850 50  0001 C CNN
 	1    10500 5850
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:PWR_FLAG #FLG0103
-U 1 1 69448299
-P 10850 5950
-F 0 "#FLG0103" H 10850 6025 50  0001 C CNN
-F 1 "PWR_FLAG" H 10850 6123 50  0000 C CNN
-F 2 "" H 10850 5950 50  0001 C CNN
-F 3 "~" H 10850 5950 50  0001 C CNN
-	1    10850 5950
-	1    0    0    -1  
-$EndComp
-Connection ~ 10850 5950
-Wire Wire Line
-	10850 5950 10800 5950
 Connection ~ 10500 5850
 Wire Wire Line
 	10500 5850 10400 5850
@@ -3113,13 +3064,7 @@ Wire Wire Line
 	3350 2200 2600 2200
 Connection ~ 3100 3450
 Wire Notes Line
-	5900 1150 5900 3800
-Wire Notes Line
-	900  3800 900  1150
-Wire Notes Line
 	900  3800 5900 3800
-Wire Notes Line
-	900  1150 5900 1150
 $Comp
 L power:+3.3V #PWR0109
 U 1 1 63993B6C
@@ -3203,8 +3148,6 @@ Wire Wire Line
 Connection ~ 5350 2500
 Wire Wire Line
 	5800 2500 5350 2500
-Wire Wire Line
-	4000 2350 4200 2350
 Connection ~ 4000 2350
 Wire Wire Line
 	4000 2350 4000 2600
@@ -3260,17 +3203,6 @@ F 3 "" H 14550 14050 50  0001 C CNN
 	1    14550 14050
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:+3.3V #PWR0113
-U 1 1 64DD9051
-P 13800 13950
-F 0 "#PWR0113" H 13800 13800 50  0001 C CNN
-F 1 "+3.3V" H 13815 14123 50  0000 C CNN
-F 2 "" H 13800 13950 50  0001 C CNN
-F 3 "" H 13800 13950 50  0001 C CNN
-	1    13800 13950
-	1    0    0    -1  
-$EndComp
 Text Label 12750 9350 0    50   ~ 0
 UART_MOTOR_2_RX
 Text Label 12750 9250 0    50   ~ 0
@@ -3287,7 +3219,7 @@ Text Label 1950 8400 0    50   ~ 0
 VBUS_COM
 Connection ~ 1700 8400
 $Comp
-L TitanCustom:ST732M33R U2
+L Titan-rescue:ST732M33R-TitanCustom U2
 U 1 1 604346A5
 P 4800 2300
 F 0 "U2" H 4800 2515 50  0000 C CNN
@@ -3301,4 +3233,170 @@ Wire Wire Line
 	4200 2350 4450 2350
 Wire Wire Line
 	5150 2500 5150 2350
+$Comp
+L Device:C C37
+U 1 1 607247E0
+P 5350 1500
+F 0 "C37" H 5465 1546 50  0000 L CNN
+F 1 "2.2uF" H 5465 1455 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5388 1350 50  0001 C CNN
+F 3 "~" H 5350 1500 50  0001 C CNN
+	1    5350 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C2
+U 1 1 607247EE
+P 4200 1500
+F 0 "C2" H 4315 1546 50  0000 L CNN
+F 1 "2.2uF" H 4315 1455 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 4238 1350 50  0001 C CNN
+F 3 "~" H 4200 1500 50  0001 C CNN
+	1    4200 1500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5150 1350 5350 1350
+Connection ~ 5350 1350
+Wire Wire Line
+	4000 1200 4200 1200
+Wire Wire Line
+	4200 1350 4200 1200
+Connection ~ 4200 1200
+Wire Wire Line
+	4200 1200 4450 1200
+Wire Wire Line
+	5150 1350 5150 1200
+Wire Wire Line
+	4000 2350 4200 2350
+Connection ~ 4000 2200
+Wire Wire Line
+	4000 2200 4000 1200
+Wire Wire Line
+	4200 1650 4800 1650
+Wire Wire Line
+	4800 1600 4800 1650
+Connection ~ 4800 1650
+Wire Wire Line
+	4800 1650 5350 1650
+$Comp
+L power:GND #PWR0113
+U 1 1 6096B7B2
+P 4800 1650
+F 0 "#PWR0113" H 4800 1400 50  0001 C CNN
+F 1 "GND" H 4805 1477 50  0000 C CNN
+F 2 "" H 4800 1650 50  0001 C CNN
+F 3 "" H 4800 1650 50  0001 C CNN
+	1    4800 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0114
+U 1 1 609AC6FF
+P 5350 1350
+F 0 "#PWR0114" H 5350 1200 50  0001 C CNN
+F 1 "+5V" H 5365 1523 50  0000 C CNN
+F 2 "" H 5350 1350 50  0001 C CNN
+F 3 "" H 5350 1350 50  0001 C CNN
+	1    5350 1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L TitanCustom:ST732M50R U9
+U 1 1 609ACE55
+P 4800 1150
+F 0 "U9" H 4800 1365 50  0000 C CNN
+F 1 "ST732M50R" H 4800 1274 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5_HandSoldering" H 4800 1150 50  0001 C CNN
+F 3 "" H 4800 1150 50  0001 C CNN
+	1    4800 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0115
+U 1 1 609FA4DE
+P 13800 13950
+F 0 "#PWR0115" H 13800 13800 50  0001 C CNN
+F 1 "+5V" H 13815 14123 50  0000 C CNN
+F 2 "" H 13800 13950 50  0001 C CNN
+F 3 "" H 13800 13950 50  0001 C CNN
+	1    13800 13950
+	1    0    0    -1  
+$EndComp
+NoConn ~ 10950 7450
+NoConn ~ 10950 7550
+NoConn ~ 10950 7650
+NoConn ~ 10950 7750
+NoConn ~ 10950 7950
+NoConn ~ 10950 8050
+NoConn ~ 10950 8150
+NoConn ~ 10950 8450
+NoConn ~ 10950 9550
+NoConn ~ 10950 9650
+NoConn ~ 10950 9850
+NoConn ~ 10950 9950
+NoConn ~ 12750 9750
+NoConn ~ 12750 9650
+NoConn ~ 12750 9550
+NoConn ~ 12750 9450
+NoConn ~ 12750 9050
+NoConn ~ 12750 8950
+NoConn ~ 12750 8850
+NoConn ~ 12750 8450
+NoConn ~ 12750 8250
+NoConn ~ 12750 8150
+NoConn ~ 12750 8050
+NoConn ~ 12750 7050
+NoConn ~ 12750 7150
+NoConn ~ 12750 7350
+NoConn ~ 12750 7450
+NoConn ~ 12750 7550
+NoConn ~ 12750 7250
+NoConn ~ 12750 6150
+NoConn ~ 12750 5650
+NoConn ~ 12750 5550
+NoConn ~ 12750 5450
+NoConn ~ 10950 6950
+NoConn ~ 10950 7050
+NoConn ~ 10950 7250
+NoConn ~ 10300 9150
+Wire Wire Line
+	10800 5950 10950 5950
+Text Label 10300 9150 0    50   ~ 0
+UART_RC_2_TX
+Wire Wire Line
+	12050 5050 12150 5050
+Connection ~ 12050 5050
+Wire Wire Line
+	11950 5050 12050 5050
+Connection ~ 11950 5050
+Wire Wire Line
+	11850 5050 11950 5050
+Connection ~ 11850 5050
+Wire Wire Line
+	11750 5050 11850 5050
+Connection ~ 11750 5050
+Wire Wire Line
+	11550 5050 11650 5050
+Wire Wire Line
+	11650 5050 11750 5050
+Connection ~ 11650 5050
+Connection ~ 12150 5050
+$Comp
+L MCU_ST_STM32F4:STM32F413VGTx U3
+U 1 1 5E1B91C6
+P 11850 7750
+F 0 "U3" H 11850 4900 50  0000 C CNN
+F 1 "STM32F413VGTx" H 11850 4800 50  0000 C CNN
+F 2 "Package_QFP:LQFP-100_14x14mm_P0.5mm" H 11150 5250 50  0001 R CNN
+F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/DM00282249.pdf" H 11850 7750 50  0001 C CNN
+	1    11850 7750
+	1    0    0    -1  
+$EndComp
+Wire Notes Line
+	5900 900  900  900 
+Wire Notes Line
+	5900 900  5900 3800
+Wire Notes Line
+	900  900  900  3800
 $EndSCHEMATC
